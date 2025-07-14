@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LandingPage from './LandingPage';
 import TasteProfileForm from './TasteProfileForm';
 
 function App() {
+  const [started, setStarted] = useState(false);
+
   return (
     <div>
-      <h1 style={{ textAlign: 'center', marginTop: 32 }}>CultureConnect Taste Profile</h1>
-      <TasteProfileForm />
+      {!started ? (
+        <LandingPage onGetStarted={() => setStarted(true)} />
+      ) : (
+        <TasteProfileForm />
+      )}
     </div>
   );
 }
