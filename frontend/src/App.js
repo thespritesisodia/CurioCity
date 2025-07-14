@@ -1,13 +1,11 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+import TasteProfileForm from './TasteProfileForm';
 
 function App() {
   return (
-    <div style={{ padding: 32 }}>
-      <h1>Welcome to CultureConnect!</h1>
-      <Button variant="contained" color="primary">
-        Material UI Button
-      </Button>
+    <div>
+      <h1 style={{ textAlign: 'center', marginTop: 32 }}>CultureConnect Taste Profile</h1>
+      <TasteProfileForm />
     </div>
   );
 }
