@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material';
+import NavItems from './NavItems';
 
 export default function LandingPage({ onGetStarted }) {
   return (
@@ -12,9 +13,9 @@ export default function LandingPage({ onGetStarted }) {
         background: 'radial-gradient(circle at 70% 20%, #b388ff 0%, #512da8 40%, #0f2027 100%)',
       }}
     >
-      {/* Top Navigation Bar with only the app name */}
+      {/* Top Navigation Bar with app name and nav items */}
       <AppBar position="static" elevation={0} sx={{ bgcolor: 'transparent', boxShadow: 'none', pt: 2 }}>
-        <Toolbar sx={{ justifyContent: 'flex-start' }}>
+        <Toolbar sx={{ justifyContent: 'flex-start', gap: 8 }}>
           <Typography
             variant="h3"
             sx={{
@@ -27,9 +28,10 @@ export default function LandingPage({ onGetStarted }) {
           >
             CurioCity
           </Typography>
+          <NavItems />
         </Toolbar>
       </AppBar>
-      {/* Main Content - moved slightly downward for balance */}
+      {/* Main Content - slightly downward for balance */}
       <Container maxWidth="md" sx={{ display: 'flex', alignItems: 'flex-start', minHeight: '60vh', pt: 16 }}>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', zIndex: 2 }}>
           <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#fff', mb: 2, lineHeight: 1.1 }}>
