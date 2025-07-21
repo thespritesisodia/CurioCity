@@ -13,9 +13,9 @@ export default function LandingPage({ onGetStarted }) {
         background: 'radial-gradient(circle at 70% 20%, #b388ff 0%, #512da8 40%, #0f2027 100%)',
       }}
     >
-      {/* Top Navigation Bar with app name and nav items */}
+      {/* Top Navigation Bar with app name and nav items slightly left of center */}
       <AppBar position="static" elevation={0} sx={{ bgcolor: 'transparent', boxShadow: 'none', pt: 2 }}>
-        <Toolbar sx={{ justifyContent: 'flex-start', gap: 8 }}>
+        <Toolbar sx={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <Typography
             variant="h3"
             sx={{
@@ -24,11 +24,14 @@ export default function LandingPage({ onGetStarted }) {
               letterSpacing: 2,
               fontFamily: 'Montserrat, Roboto, Arial, sans-serif',
               textShadow: '0 2px 16px rgba(81,45,168,0.25)',
+              mr: 6,
             }}
           >
             CurioCity
           </Typography>
-          <NavItems />
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start', pl: 8 }}>
+            <NavItems />
+          </Box>
         </Toolbar>
       </AppBar>
       {/* Main Content - slightly downward for balance */}
